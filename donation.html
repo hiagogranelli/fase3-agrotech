@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjudAí - Pontos de Doação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AjudAí</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donation.html">Doações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1>Pontos de Doação</h1>
+            <p class="lead">Conheça os locais que precisam da sua ajuda</p>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <div class="donation-points">
+            <div class="donation-card">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/300x200" alt="Casa de Apoio São José" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Casa de Apoio São José</h3>
+                        <div class="donation-info">
+                            <p><i class="bi bi-geo-alt-fill"></i> Rua Exemplo, 123 - Centro, São Paulo</p>
+                            <p><i class="bi bi-telephone-fill"></i> (11) 1234-5678</p>
+                            <p><i class="bi bi-clock-fill"></i> Segunda a Sexta: 8h às 18h</p>
+                        </div>
+                        <h4>Itens necessários:</h4>
+                        <ul class="donation-items">
+                            <li><i class="bi bi-check-circle"></i> Roupas em bom estado</li>
+                            <li><i class="bi bi-check-circle"></i> Cobertores</li>
+                            <li><i class="bi bi-check-circle"></i> Alimentos não perecíveis</li>
+                            <li><i class="bi bi-check-circle"></i> Produtos de higiene</li>
+                        </ul>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#donationModal1">
+                            Como Doar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/300x200" alt="Abrigo Esperança" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Abrigo Esperança</h3>
+                        <div class="donation-info">
+                            <p><i class="bi bi-geo-alt-fill"></i> Av. Exemplo, 456 - Pinheiros, São Paulo</p>
+                            <p><i class="bi bi-telephone-fill"></i> (11) 9876-5432</p>
+                            <p><i class="bi bi-clock-fill"></i> Segunda a Sábado: 9h às 17h</p>
+                        </div>
+                        <h4>Itens necessários:</h4>
+                        <ul class="donation-items">
+                            <li><i class="bi bi-check-circle"></i> Produtos de higiene pessoal</li>
+                            <li><i class="bi bi-check-circle"></i> Alimentos não perecíveis</li>
+                            <li><i class="bi bi-check-circle"></i> Fraldas infantis e geriátricas</li>
+                            <li><i class="bi bi-check-circle"></i> Material de limpeza</li>
+                        </ul>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#donationModal2">
+                            Como Doar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="donationModal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Como doar para Casa de Apoio São José</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Opções de doação:</h6>
+                    <ul>
+                        <li>Entrega presencial no endereço</li>
+                        <li>Agendamento de coleta (raio de 5km)</li>
+                        <li>Transferência bancária:
+                            <ul>
+                                <li>Banco: XXX</li>
+                                <li>Agência: 0000</li>
+                                <li>Conta: 00000-0</li>
+                                <li>PIX: 00.000.000/0001-00</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="donationModal2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Como doar para Abrigo Esperança</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Opções de doação:</h6>
+                    <ul>
+                        <li>Entrega presencial no endereço</li>
+                        <li>Agendamento de coleta (raio de 3km)</li>
+                        <li>Transferência bancária:
+                            <ul>
+                                <li>Banco: YYY</li>
+                                <li>Agência: 1111</li>
+                                <li>Conta: 11111-1</li>
+                                <li>PIX: contato@abrigoesperanca.org</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-center">
+          <span class="text-muted">© 2024 AjudAí - Todos os direitos reservados</span>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

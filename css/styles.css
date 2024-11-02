@@ -1,0 +1,267 @@
+:root {
+    --primary-color: #2C5530;
+    --secondary-color: #8BC34A;
+    --accent-color: #FF5722;
+    --text-color: #333333;
+    --light-bg: #F5F7F2;
+    --white: #FFFFFF;
+}
+
+body {
+    padding-top: 76px;
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-bg);
+}
+
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.main-content {
+    margin: 2rem auto 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.hero-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 0;
+    margin: -2rem 0 2rem 0;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.card {
+    width: 100%;
+    max-width: 350px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.form-label {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f4511e;
+    transform: translateY(-2px);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    color: var(--white);
+}
+
+.footer .text-muted {
+    color: var(--white) !important;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.form-container form {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: var(--white);
+        padding: 1rem;
+        border-radius: 0.25rem;
+        margin-top: 0.5rem;
+    }
+
+    .main-content {
+        margin: 1rem 0 5rem 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card-container {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .form-container {
+        padding: 0 1rem;
+    }
+}
+
+.donation-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.donation-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.donation-info {
+    margin-bottom: 1.5rem;
+}
+
+.donation-info p {
+    margin-bottom: 0.5rem;
+}
+
+.donation-info i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.donation-items {
+    list-style: none;
+    padding-left: 0;
+}
+
+.donation-items li {
+    margin-bottom: 0.5rem;
+}
+
+.donation-items i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    .donation-card {
+        padding: 1rem;
+    }
+    
+    .donation-card .row {
+        flex-direction: column;
+    }
+    
+    .donation-card .col-md-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1rem;
+}
+
+.card-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-link .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
