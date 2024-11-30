@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const messageInput = document.getElementById('message');
     const charCount = document.getElementById('charCount');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    // Initially disable the submit button
+    submitButton.disabled = true;
 
     // Update character count
     messageInput.addEventListener('input', function() {
@@ -19,6 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function isValidName(name) {
         const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ]+\s+[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
         return nameRegex.test(name);
+    }
+
+    // Check if all fields are valid
+    function checkFormValidity() {
+        const name = form.elements['name'].value;
+        const email = form.elements['email'].value;
+        const message = form.elements['message'].value;
+
+        const isNameValid = isValidName(name);
+        const isEmailValid = isValidEmail(email);
+        const isMessageValid = message.length >= 30 && message.length <= 500;
+
+        // Enable/disable submit button based on form validity
+        submitButton.disabled = !(isNameValid && isEmailValid && isMessageValid);
     }
 
     form.addEventListener('submit', function(event) {
@@ -64,34 +82,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Real-time validation
-    form.elements['name'].addEventListener('input', function() {
-        if (isValidName(this.value)) {
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
-        } else {
-            this.classList.remove('is-valid');
-            this.classList.add('is-invalid');
-        }
-    });
-
-    form.elements['email'].addEventListener('input', function() {
-        if (isValidEmail(this.value)) {
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
-        } else {
-            this.classList.remove('is-valid');
-            this.classList.add('is-invalid');
-        }
-    });
-
-    form.elements['message'].addEventListener('input', function() {
-        if (this.value.length >= 30 && this.value.length <= 500) {
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
-        } else {
-            this.classList.remove('is-valid');
-            this.classList.add('is-invalid');
-        }
+    // Real-time validation for all inputs
+    ['name', 'email', 'message'].forEach(fieldName => {
+        form.elements[fieldName].addEventListener('input', function() {
+            if (fieldName === 'name') {
+                if (isValidName(this.value)) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                }
+            } else if (fieldName === 'email') {
+                if (isValidEmail(this.value)) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                }
+            } else if (fieldName === 'message') {
+                if (this.value.length >= 30 && this.value.length <= 500) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                }
+            }
+            
+            // Check form validity after each input change
+            checkFormValidity();
+        });
     });
 }); 
