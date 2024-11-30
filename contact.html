@@ -34,38 +34,46 @@
         <div class="form-container">
             <h1 class="text-center mb-4">Fale conosco</h1>
             <p class="text-center mb-4">Preencha o formulário abaixo para entrar em contato com nossa equipe.</p>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate id="contactForm">
                 <div class="row g-3">
                     <div class="col-12 col-md-6">
                         <label for="name" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" 
+                               class="form-control" 
+                               id="name" 
+                               name="name"
+                               pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+\s+[A-Za-zÀ-ÖØ-öø-ÿ\s]+$"
+                               required>
                         <div class="invalid-feedback">
-                            Por favor, insira seu nome.
+                            Por favor, insira seu nome completo (nome e sobrenome).
                         </div>
                     </div>
 
                     <div class="col-12 col-md-6">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" 
+                               class="form-control" 
+                               id="email" 
+                               name="email"
+                               required>
                         <div class="invalid-feedback">
                             Por favor, insira um email válido.
                         </div>
                     </div>
 
                     <div class="col-12">
-                        <label for="subject" class="form-label">Assunto</label>
-                        <input type="text" class="form-control" id="subject" required>
-                        <div class="invalid-feedback">
-                            Por favor, insira um assunto.
-                        </div>
-                    </div>
-
-                    <div class="col-12">
                         <label for="message" class="form-label">Mensagem</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                        <textarea class="form-control" 
+                                  id="message" 
+                                  name="message"
+                                  rows="5" 
+                                  minlength="30"
+                                  maxlength="500"
+                                  required></textarea>
                         <div class="invalid-feedback">
-                            Por favor, insira sua mensagem.
+                            A mensagem deve ter entre 30 e 500 caracteres.
                         </div>
+                        <small class="text-muted">Caracteres restantes: <span id="charCount">500</span></small>
                     </div>
 
                     <div class="col-12 text-center">
@@ -84,5 +92,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html> 
